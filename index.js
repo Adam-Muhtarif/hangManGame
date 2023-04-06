@@ -105,13 +105,11 @@ document.querySelectorAll(".letter").forEach((letter) => {
 
       // If WrongAttempts Reach Maximum
       if (wrongAttempts === 11) {
-        document.querySelectorAll(".letter").forEach((e) => {
-          e.classList.add("blocked");
-          setTimeout(() => {
-            document.getElementById("fail").play();
-            // Looser Popup
-          }, 1500);
-        });
+        blockLetters(document.querySelectorAll(".letter"));
+        setTimeout(() => {
+          document.getElementById("fail").play();
+          // Looser Popup
+        }, 1500);
       }
     }
     // ==================================================================
@@ -123,6 +121,7 @@ document.querySelectorAll(".letter").forEach((letter) => {
         correctAttempts++;
       }
       if (correctAttempts === arr.length) {
+        blockLetters(document.querySelectorAll(".letter"));
         setTimeout(() => {
           document.getElementById("success").play();
 
@@ -133,4 +132,13 @@ document.querySelectorAll(".letter").forEach((letter) => {
     // ==================================================================
   });
 });
+// ====================================================================================
+
+// Get All Letters And Block It
+// ====================================================================================
+function blockLetters(letters) {
+  letters.forEach((letter) => {
+    letter.classList.add("blocked");
+  });
+}
 // ====================================================================================
