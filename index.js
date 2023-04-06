@@ -120,10 +120,19 @@ document.querySelectorAll(".letter").forEach((letter) => {
       if (e.innerHTML) {
         correctAttempts++;
       }
+
+      // If Player Win
       if (correctAttempts === arr.length) {
         blockLetters(document.querySelectorAll(".letter"));
+
         setTimeout(() => {
           document.getElementById("success").play();
+          // Start Celebration Canvas
+          startConfetti();
+          // Stop Celebration Canvas
+          setTimeout(() => {
+            stopConfetti();
+          }, 1500);
 
           // Winner Popup
         }, 1500);
