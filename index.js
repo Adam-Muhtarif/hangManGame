@@ -38,8 +38,7 @@ let randomArrayValue = randomCategoryValue[randomArrayIndex];
 
 // Print Random Category + Random Word
 // ==========================================================================
-document.querySelector(".category span").innerHTML =
-  randomCategory + " " + randomArrayValue;
+document.querySelector(".category span").innerHTML = randomCategory;
 // ==========================================================================
 
 // Create Guess Spans Boxes
@@ -124,7 +123,6 @@ document.querySelectorAll(".letter").forEach((letter) => {
         correctAttempts++;
       }
       if (correctAttempts === arr.length) {
-        console.log("finished");
         setTimeout(() => {
           document.getElementById("success").play();
 
