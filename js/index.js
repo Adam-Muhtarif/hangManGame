@@ -22,7 +22,7 @@ lettersArray.forEach((letter) => {
 
 // Fetch Words From Json File Or Any Api You Want
 // ============================================================================================
-getData("/words.json");
+getData("json/words.json");
 async function getData(link) {
   try {
     let data = await fetch(link);
