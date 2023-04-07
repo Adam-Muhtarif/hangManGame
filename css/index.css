@@ -7,8 +7,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .container {
-  padding: 50px;
-}
+  padding: 40px;
+   }
 .game-info {
   display: flex;
   justify-content: space-between;
@@ -173,7 +173,7 @@ hr {
   max-height: 100%;
 }
 
-a {
+a.letter {
   width: 60px;
   height: 60px;
   display: grid;
@@ -185,7 +185,7 @@ a {
   cursor: pointer;
   transition: 0.3s;
 }
-a.blocked {
+a.letter.blocked {
   background-color: #999;
   pointer-events: none;
 }
@@ -260,7 +260,7 @@ a.blocked {
 
 @media (max-width: 991px) {
   .container {
-    margin: 20px;
+    padding: 20px;
   }
   .game-info {
     flex-direction: column;
@@ -272,8 +272,6 @@ a.blocked {
     flex-direction: column;
     align-items: center;
     gap: 60px;
-  }
-  .hangman {
   }
   .hangman-draw {
     min-height: 250px;
@@ -291,6 +289,24 @@ a.blocked {
     height: 50px;
   }
 }
+
+/* Start Popup */
+/*================================================= */
+span.wrongNumbers {
+  color: red;
+  font-weight: bold;
+}
+span.correctNumbers {
+  color: green;
+  font-weight: bold;
+}
+
+.swal2-image:not([src="images/fail.gif"]) {
+  transform: translate(30px);
+}
+/*================================================= */
+
+
 
 @media (max-width: 375px) {
   .guess-section span {

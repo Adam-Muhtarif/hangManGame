@@ -20,6 +20,12 @@ lettersArray.forEach((letter) => {
 });
 // ============================================================
 
+// Important variables for celebrating / fail Popup
+// ============================================================
+let howManyWrongs = 0;
+let howManyCorrects = 0;
+// ============================================================
+
 // Fetch Words From Json File Or Any Api You Want
 // ============================================================================================
 getData("json/words.json");
@@ -106,7 +112,10 @@ async function getData(link) {
           document.getElementById("right").play();
         } else {
           document.getElementById("wrong").play();
+
           wrongAttempts++;
+          howManyWrongs = wrongAttempts;
+
           document
             .querySelector(".hangman-draw")
             .classList.add(`wrong-${wrongAttempts}`);
@@ -119,6 +128,7 @@ async function getData(link) {
             setTimeout(() => {
               document.getElementById("fail").play();
               // Looser Popup
+              fail();
             }, 1500);
           }
         }
@@ -129,6 +139,7 @@ async function getData(link) {
         document.querySelectorAll(".hasValue").forEach((e, i, arr) => {
           if (e.innerHTML) {
             correctAttempts++;
+            howManyCorrects = correctAttempts;
           }
 
           if (correctAttempts === arr.length) {
@@ -144,6 +155,7 @@ async function getData(link) {
               }, 1500);
 
               // Winner Popup
+              celebrate();
             }, 1500);
           }
         });
@@ -163,5 +175,47 @@ async function getData(link) {
   } catch (reason) {
     console.log(reason);
   }
+}
+// ============================================================================================
+
+
+// Popups
+// ============================================================================================
+// Celebration Popup
+function celebrate() {
+  Swal.fire({
+    title: "You Win The Game",
+    text: "Good Job",
+    imageUrl: "images/celebrate.gif",
+    imageWidth: 150,
+    imageHeight: 150,
+    imageAlt: "Custom image",
+    footer: `
+    You made
+    "<span class="wrongNumbers"> ${howManyWrongs} </span>" 
+    Wrong Attempts,
+    And "<span class="correctNumbers"> ${howManyCorrects} </span>"
+    Correct Attempts
+    `,
+  });
+}
+
+// Fail Popup
+function fail() {
+  Swal.fire({
+    title: "You Lost The Game",
+    text: "You Piece Of Shit",
+    imageUrl: "images/fail.gif",
+    imageWidth: 150,
+    imageHeight: 150,
+    imageAlt: "Custom image",
+    footer: `
+    You made
+    "<span class="wrongNumbers"> ${howManyWrongs} </span>" 
+    Wrong Attempts,
+    And "<span class="correctNumbers"> ${howManyCorrects} </span>"
+    Correct Attempts
+    `,
+  });
 }
 // ============================================================================================
