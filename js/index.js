@@ -210,11 +210,8 @@ function fail() {
     imageHeight: 150,
     imageAlt: "Custom image",
     footer: `
-    You made
-    "<span class="wrongNumbers"> ${howManyWrongs} </span>" 
-    Wrong Attempts,
-    And "<span class="correctNumbers"> ${howManyCorrects} </span>"
-    Correct Attempts
+    You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
+    And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
     `,
   });
 }
@@ -232,11 +229,8 @@ document.querySelector(".btn").onclick = function () {
     imageHeight: 150,
     imageAlt: "Custom image",
     footer: `
-    You made
-    "<span class="wrongNumbers"> ${howManyWrongs} </span>" 
-    Wrong Attempts,
-    And "<span class="correctNumbers"> ${howManyCorrects} </span>"
-    Correct Attempts
+    You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
+    And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
     `,
   });
 
