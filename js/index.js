@@ -191,11 +191,8 @@ function celebrate() {
     imageHeight: 150,
     imageAlt: "Custom image",
     footer: `
-    You made
-    "<span class="wrongNumbers"> ${howManyWrongs} </span>" 
-    Wrong Attempts,
-    And "<span class="correctNumbers"> ${howManyCorrects} </span>"
-    Correct Attempts
+    You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
+    And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
     `,
   });
 }
@@ -219,19 +216,3 @@ function fail() {
 
 
 
-
-document.querySelector(".btn").onclick = function () {
-  Swal.fire({
-    title: "You Win The Game",
-    text: "Good Job",
-    imageUrl: "images/celebrate.gif",
-    imageWidth: 150,
-    imageHeight: 150,
-    imageAlt: "Custom image",
-    footer: `
-    You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
-    And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
-    `,
-  });
-
-}
