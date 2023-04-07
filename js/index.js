@@ -191,8 +191,12 @@ function celebrate() {
     imageHeight: 150,
     imageAlt: "Custom image",
     footer: `
-    You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
-    And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
+    <div>
+	You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
+    </div>
+    <div>
+        And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
+    </div>
     `,
   });
 }
@@ -207,8 +211,12 @@ function fail() {
     imageHeight: 150,
     imageAlt: "Custom image",
     footer: `
-    You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
-    And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
+    <div>
+	You made "<span class="wrongNumbers"> ${howManyWrongs} </span>" Wrong Attempts,
+    </div>
+    <div>
+        And "<span class="correctNumbers"> ${howManyCorrects} </span>" Correct Attempts
+    </div>
     `,
   });
 }
