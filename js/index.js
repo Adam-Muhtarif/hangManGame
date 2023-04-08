@@ -205,7 +205,7 @@ function celebrate() {
 function fail() {
   Swal.fire({
     title: "You Lost The Game",
-    text: "You Piece Of Shit",
+    text: "Good Luck Next Time",
     imageUrl: "images/fail.gif",
     imageWidth: 150,
     imageHeight: 150,
